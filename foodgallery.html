@@ -1,44 +1,119 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>resturant</title>
-        <style>
-            body{
-  margin: 5 px;
-  font-family: Arial;
-}
-.topnav {
-  overflow: hidden;
-  background-color: pink;
-}
+<head>
+  <title>The Flavor Bistro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fffaf0, #ffe4e1);
+    }
 
-.topnav a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 14px 16px ;
-  text-decoration: none;
-  font-size: 15px;
-}
-.topnav a:hover{
-  background-color: blue;
-  color: white;
-}
+    .topnav {
+      overflow: hidden;
+      background-color: #ff69b4;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-.topnav a.active {
-  background-color:green  ;
-  color: white;
-}
-        </style>
-    </head>
-    <body>
+    .topnav a {
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 14px 18px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .topnav a:hover {
+      background-color: #ff1493;
+      color: white;
+    }
+
+    .topnav a.active {
+      background-color: #228B22;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #b22222;
+      font-size: 36px;
+      text-shadow: 2px 2px #ffe4e1;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 18px;
+      color: #444;
+      max-width: 700px;
+      margin: 10px auto 40px auto;
+    }
+
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .carousel-container img {
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      display: none;
+      margin-bottom: 20px;
+  
+    }
+
+   
+  </style>
+</head>
+
+<body>
   <div class="topnav">
-  <a class="active" href="index.html">HOME</a>
-  <a href="menu.html">MENU</a>
-  <a href="foodgallery.html">FOOD GALLERY </a>
-  <a href="aboutus.html">ABOUT US</a>
-  <a href="complaints.html">COMPLAINTS</a>
-
-
+    <a class="active" href="index.html">HOME</a>
+    <a href="menu.html">MENU</a>
+    <a href="foodgallery.html">FOOD GALLERY</a>
+    <a href="aboutus.html">ABOUT US</a>
+    <a href="complaints.html">COMPLAINTS</a>
   </div>
- </body>
+
+  <h1>Welcome to The Flavor Bistro</h1>
+  <p class="description">Discover mouthwatering dishes, delightful desserts, and refreshing drinks. Enjoy our hand-picked menu and cozy atmosphere!</p>
+
+  <div class="carousel-container">
+    <img class="myslide" src="cheeseburger.jpg" height="300" width="300" alt="Cheeseburger">
+    <img class="myslide" src="fried chicken burger.webp" height="300" width="300" alt="Chicken Burger">
+    <img class="myslide" src="fried wings.jpg" height="300" width="300" alt="Fried Wings">
+    <img class="myslide" src="ice cream.jpg" height="300" width="300" alt="Ice Cream">
+    <img class="myslide" src="images.jpg" height="300" width="300" alt="Food Item">
+    <img class="myslide" src="MOLTEN lava cake.jpg" height="300" width="300" alt="Molten Cake">
+    <img class="myslide" src="mushroom dumpling soup.jpg" height="300" width="300" alt="Soup">
+    <img class="myslide" src="nuggets.jpg" height="300" width="300" alt="Nuggets">
+    <img class="myslide" src="pasta.jpg" height="300" width="300" alt="Pasta">
+    <img class="myslide" src="pizza.jpg" height="300" width="300" alt="Pizza">
+    <img class="myslide" src="sandwiches.jpg" height="300" width="300" alt="Sandwiches">
+    <img class="myslide" src="steak.jpg" height="300" width="300" alt="Steak">
+    <img class="myslide" src="tacos.jpg" height="300" width="300" alt="Tacos">
+    <img class="myslide" src="the ramen bowl.jpg" height="300" width="300" alt="Ramen Bowl">
+  </div>
+
+  <script>
+    let index = 0;
+    function carousel() {
+      let slides = document.getElementsByClassName("myslide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      index++;
+      if (index > slides.length) { index = 1; }
+      slides[index - 1].style.display = "block";
+      setTimeout(carousel, 2000);
+    }
+    carousel();
+  </script>
+  <h6> i learned these styling options from my internet incase you are wondering how did i do the styling </h6>
+</body>
 </html>
