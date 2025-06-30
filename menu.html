@@ -1,44 +1,317 @@
 <html>
-    <head>
-        <title>resturant</title>
-        <style>
-            body{
-  margin: 5 px;
-  font-family: Arial;
-}
-.topnav {
-  overflow: hidden;
-  background-color: pink;
-}
-
-.topnav a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 14px 16px ;
-  text-decoration: none;
-  font-size: 15px;
-}
-.topnav a:hover{
-  background-color: blue;
-  color: white;
-}
-
-.topnav a.active {
-  background-color:green  ;
-  color: white;
-}
-        </style>
-    </head>
-    <body>
-  <div class="topnav">
-  <a class="active" href="index.html">HOME</a>
-  <a href="menu.html">MENU</a>
-  <a href="foodgallery.html">FOOD GALLERY </a>
-  <a href="aboutus.html">ABOUT US</a>
-  <a href="complaints.html">COMPLAINTS</a>
+<head>
+    <title>Restaurant</title>
+    <style>
+        body {
+            margin: 5px;
+            font-family: Arial;
+            background-color: rgb(181, 173, 180);
+        }
 
 
-  </div>
- </body>
+
+        .topnav {
+            overflow: hidden;
+            background-color: pink;
+        }
+
+        .topnav a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .topnav a:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: green;
+            color: white;
+        }
+
+        .heading {
+            font-family: cursive;
+            margin-top: 10px;
+            background-color: rgb(225, 215, 215);
+            text-align: center;
+        }
+
+        .item-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px;
+            padding: 20px;
+            background-color: #f4eaea;
+            border-radius: 20px;
+        }
+
+        .item-container img {
+            border-radius: 25px;
+            height: 300px;
+            width: 350px;
+        }
+
+        .item-text {
+            max-width: 500px;
+        }
+
+        .item-text h1 {
+            margin-top: 0;
+        }
+
+        .item-text p {
+            font-size: 16px;
+        }
+        button {
+      
+      color: white;
+      background-color: #d78971;
+      padding: 12px 25px;
+      margin : 10px;
+      border-radius: 5px;
+      font-size: 18px;
+margin-bottom: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="active" href="index.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="foodgallery.html">FOOD GALLERY</a>
+        <a href="aboutus.html">ABOUT US</a>
+        <a href="complaints.html">COMPLAINTS</a>
+    </div>
+
+
+  <button class="cart-toggle-btn" onclick="toggleCart()" >🛒 Open Cart</button>
+
+    
+    <div id="cart" style=" margin-bottom: 10%;">
+        <h2>Your Cart</h2>
+        <ul id="cartItems"></ul>
+        <hr>
+        <p><strong>Total: RS <span id="total">0</span></strong></p>
+      <button onclick="window.location.href='order.html'">ORDER</button>
+
+    </div>
+
+    <div class="item-container">
+        <img src="dinner.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>PASTA - RS 800</h1>
+            <p>Our signature Pasta is a comforting classic, made with perfectly cooked penne tossed in a rich, creamy garlic parmesan sauce. Garnished with fresh herbs and served piping hot, it’s the ultimate comfort food — simple, elegant, and bursting with flavor. A favorite for both kids and adults!</p>
+            <button onclick="addToCart('Pasta', 800)">Add to Cart</button>
+        </div>
+    </div>
+        <div class="item-container">
+        <img src="the ramen bowl.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>THE RAMEN BOWL - RS 1000</h1>
+            <p> Our ramen bowl features a rich, flavorful broth, chewy wheat noodles, and various toppings like sliced pork, seaweed, and a soft-boiled egg. The broth is often based on chicken or pork bones and infused with dashi, is the heart of the dish, with tare (flavoring base) like soy sauce or miso adding depth.</p>
+            <button onclick="addToCart('THE RAMEN BOWL', 1000)">Add to Cart</button>
+        </div>
+    </div>
+        </div>
+        <div class="item-container">
+        <img src="tacos.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>TACOS - RS 1500</h1>
+            <p>Our restaurant’s tacos feature a mouthwatering blend of bold flavors and fresh ingredients. We start with soft, warm tortillas that cradle juicy, seasoned meat — whether it's tender chicken, spiced beef, or grilled veggies. Each taco is layered with crunchy lettuce, fresh tomatoes, creamy guacamole, and a sprinkle of tangy cheese. A drizzle of our signature zesty sauce adds the perfect finishing touch.</p>
+            <button onclick="addToCart('TACOS', 1500)">Add to Cart</button>
+        </div>
+    </div>
+            <div class="item-container">
+        <img src="steak.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>STEAK - RS 3000</h1>
+            <p>Our restaurant’s steak features premium cuts of tender, juicy beef, expertly seasoned and grilled to perfection. Each steak is seared to lock in rich, smoky flavor, then cooked just the way you like — whether it's medium-rare, well-done, or somewhere in between. We serve it sizzling hot with a side of buttery mashed potatoes and grilled vegetables!</p>
+            <button onclick="addToCart('STEAK', 3000)">Add to Cart</button>
+        </div>
+    </div>
+                <div class="item-container">
+        <img src="sandwiches.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>SANDWICHES - RS 500</h1>
+            <p>Our restaurant’s sandwiches feature layers of fresh, flavorful ingredients stacked between perfectly toasted bread. Whether you choose grilled chicken, juicy beef, or a veggie delight, each sandwich is packed with taste. We use crisp lettuce, ripe tomatoes, melty cheese, and our signature sauces to bring every bite to life. Served warm with a side of fries or a fresh salad, our sandwiches are the perfect mix of comfort and satisfaction.!</p>
+           <button onclick="addToCart('SANDWICHES', 500)">Add to Cart</button>
+        </div>
+    </div>
+
+                        <div class="item-container">
+        <img src="pizza.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>PIZZA - RS 2100</h1>
+            <p>Our restaurant’s pizza features a soft, hand-tossed crust baked to golden perfection and loaded with mouthwatering toppings. We start with a rich, flavorful tomato sauce, spread generously over the base, then layer it with melty mozzarella cheese that stretches with every bite.!</p>
+            <button onclick="addToCart('PIZZA', 2100)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="nuggets.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>NUGGETS - RS 600</h1>
+            <p>Our restaurant’s nuggets feature golden, crispy perfection in every bite! Made with tender, juicy chicken and coated in a crunchy breadcrumb layer, our nuggets are fried until perfectly crisp on the outside and soft on the inside. Served hot with your choice of sauces — from classic ketchup to creamy garlic mayo and tangy BBQ — they’re a hit with both kids and adults.!</p>
+            <button onclick="addToCart('NUGGETS', 600)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="mushroom dumpling soup.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>MUSHROOM DUMPLING SOUP - RS 700</h1>
+            <p>Our restaurant’s Mushroom Dumpling Soup features delicate, hand-folded dumplings filled with savory mushrooms and herbs, gently simmered in a rich, aromatic broth. Each spoonful delivers earthy mushroom flavor, soft dumpling texture, and warm, comforting spices that soothe the soul. !</p>
+            <button onclick="addToCart('MUSHROOM DUMPLING SOUP', 700)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="MOLTEN lava cake.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>MOLTEN LAVA CAKE - RS 1000</h1>
+            <p>Our restaurant’s Molten Lava Cake features a rich, fudgy chocolate cake with a warm, gooey center that melts in your mouth. Baked to perfection, the outside is soft and moist, while the inside holds a silky river of molten chocolate that flows with every bite. Served with a scoop of vanilla ice cream or a drizzle of chocolate sauce, it’s the ultimate dessert for chocolate lovers!</p>
+            <button onclick="addToCart('MOLTEN LAVA CAKE', 1000)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="lunch.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>SPECIAL SANDWICHES - RS 800</h1>
+            <p>Our restaurant’s Special Sandwiches feature a gourmet twist on the classic favorite, made with love and layered with bold, unforgettable flavors. Each sandwich is built with perfectly grilled meats or crispy golden patties, fresh veggies, creamy sauces, and melty cheese — all tucked between warm, toasted bread or soft buns.</p>
+            <button onclick="addToCart('SPECIAL SANDWICHES', 800)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="chefspecialsoup.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>CHEF SPECIAL SOUP - RS 800</h1>
+            <p>Our restaurant’s Chef Special Soup is a heartwarming creation made with handpicked ingredients and a touch of culinary magic. Carefully crafted by our head chef, this soup blends tender vegetables, perfectly seasoned meat or chicken, and a rich, slow-simmered broth full of deep, comforting flavors. Garnished with fresh herbs and a sprinkle of spice, it’s the perfect bowl to warm you up, lift your mood, and satisfy your soul.
+
+!</p>
+            <button onclick="addToCart('CHEF SPECIAL SOUP', 800)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="ice cream.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>ICE CREAM - RS 400</h1>
+            <p>Our restaurant’s ice cream features rich, creamy scoops of pure happiness in every bite! Made with premium ingredients and available in a variety of delicious flavors — from classic vanilla and chocolate to fruity strawberry and indulgent cookies & cream — there’s something for everyone to enjoy.!</p>
+            <button onclick="addToCart('ICE CREAM', 400)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="fried wings.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>FRIED WINGS- RS 500</h1>
+            <p>Our restaurant’s fried wings are golden, crispy, and packed with bold flavor in every bite! Marinated with our special blend of spices, each wing is deep-fried to perfection — crunchy on the outside, juicy and tender on the inside. Choose from classic spicy, BBQ-glazed, honey garlic, or fiery hot — served fresh with dipping sauces that take the flavor to the next level.!</p>
+           <button onclick="addToCart('FRIED WINGS', 500)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="fried chicken burger.webp" alt="Ramen Bowl">
+        <div class="item-text">
+                       <h1>CKICKEN BURGER - RS 600</h1>
+            <p>Our restaurant's Chicken Burger features a perfectly seasoned, tender chicken fillet that's either crispy-fried or grilled to juicy perfection. It's layered with fresh lettuce, ripe tomatoes, crunchy pickles, and a slice of melted cheese — all inside a soft, toasted bun. What makes it special? We top it off with our restaurant's signature creamy sauce, adding just the right kick of flavor in every bite.</p>
+            <button onclick="addToCart('CHICKEN BURGER', 600)">Add to Cart</button>
+        </div>
+    </div>
+                            <div class="item-container">
+        <img src="cheeseburger.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>CHEESE BURGER- RS 600</h1>
+            <p>Our restaurant's Cheese Burger features a juicy, flame-grilled beef patty made from premium ground meat, seasoned to perfection for bold, mouthwatering flavor. It's topped with a generous slice of melted cheddar cheese that adds a rich, creamy layer to every bite. Served in a soft, toasted bun, the burger is stacked with crisp lettuce, fresh tomatoes, onions, and tangy pickles, all brought together</p>
+            <button onclick="addToCart('CHEESE BURGER', 600)">Add to Cart</button>
+        </div>
+    </div>
+                                <div class="item-container">
+        <img src="breakfast.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>THE BREAKFAST PLATE - RS 1000</h1>
+            <p>Our restaurant’s Breakfast Plate is the perfect way to start your day — hearty, fresh, and full of flavor! It features two perfectly cooked eggs (your way), crispy golden bacon, and warm, buttery toast that’s lightly toasted to perfection. Simple yet satisfying, this classic breakfast brings comfort to your plate and energy to your morning!</p>
+            <button onclick="addToCart('THE BREAKFAST PLATE', 1000)">Add to Cart</button>
+        </div>
+    </div>
+                                <div class="item-container">
+        <img src="handi.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+                    <h1>HANDI - RS 2000</h1>
+            <p>Our restaurant’s Handi features tender, slow-cooked meat simmered in a rich, creamy gravy full of traditional spices and bold aromas. Prepared in a classic clay pot, this dish locks in deep flavor — with juicy chicken or beef infused with ginger, garlic, yogurt, and a perfect blend of Desi masalas. Topped with fresh coriander, green chilies, and a swirl of cream, our handi is served sizzling hot and pairs perfectly with naan or steamed rice.!</p>
+            <button onclick="addToCart('HANDI', 2000)">Add to Cart</button>
+        </div>
+    </div>
+                                <div class="item-container">
+        <img src="biryani.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>BIRYANI - RS 800</h1>
+            <p>Our restaurant’s Biryani is a fragrant masterpiece, layered with long-grain basmati rice, tender meat, and bold spices that awaken your senses. Whether you choose chicken, beef, or mutton, each piece is marinated to perfection and slow-cooked for rich, juicy flavor. The rice is infused with saffron, whole spices, and herbs, giving every spoonful a burst of taste and aroma!</p>
+            <button onclick="addToCart('BIRYANI', 800)">Add to Cart</button>
+        </div>
+    </div>
+                                <div class="item-container">
+        <img src="sushi.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>sushi - RS 3000</h1>
+            <p>Our restaurant’s sushi features a perfect balance of freshness, flavor, and finesse — handcrafted with care by our skilled chefs. We use the finest sushi-grade fish, crisp vegetables, and fluffy seasoned rice, all wrapped in delicate seaweed or served as beautiful bite-sized rolls. From classic California rolls to spicy tuna and creamy avocado, every piece offers a clean, refreshing taste with a touch of wasabi and soy on the side.!</p>
+            <button onclick="addToCart('SUSHI', 3000)">Add to Cart</button>
+        </div>
+    </div>
+                               <div class="item-container">
+        <img src="butter chicken.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>BUTTER CHICKEN - RS 2600</h1>
+            <p>Our restaurant’s Butter Chicken is a creamy, flavorful delight that melts in your mouth with every bite. We use tender, marinated chicken cooked in a buttery, tomato-based gravy that's slow-simmered with aromatic spices, fresh cream, and a hint of sweetness. The result? A smooth, rich curry with just the right balance of spice and comfort — perfect for pairing with warm naan or fluffy rice.!</p>
+            <button onclick="addToCart('BUTTER CHICKEN', 2600)">Add to Cart</button>
+        </div>
+    </div>
+                                <div class="item-container">
+        <img src="kheer.jpg" alt="Ramen Bowl">
+        <div class="item-text">
+            <h1>KHEER - RS 800</h1>
+            <p>Our restaurant’s Kheer is a traditional dessert made with love — rich, creamy, and perfectly sweet. We slowly simmer fine rice in full cream milk, sweetened just right and flavored with cardamom for that classic Desi aroma. Topped with crushed nuts like almonds and pistachios, and sometimes a hint of rose water, every spoonful is smooth, silky, and soul-satisfying.
+
+!</p>
+            <button onclick="addToCart('KHEER', 800)">Add to Cart</button>
+        </div>
+    </div>
+                                
+    <script>
+let total = 0;
+        const cartList = document.getElementById("cartItems");
+        const totalDisplay = document.getElementById("total");
+
+        function addToCart(itemName, itemPrice) {
+            const li = document.createElement("li");
+            li.classList.add("cart-item");
+            li.textContent = `${itemName} - RS ${itemPrice}`;
+
+            const removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
+            removeBtn.className = "remove-btn";
+
+            removeBtn.onclick = function () {
+                cartList.removeChild(li);
+                total -= itemPrice;
+                totalDisplay.textContent = total;
+            };
+
+            li.appendChild(removeBtn);
+            cartList.appendChild(li);
+            total += itemPrice;
+            totalDisplay.textContent = total;
+        }
+
+        function toggleCart() {
+            const cart = document.getElementById("cart");
+            cart.classList.toggle("active");
+        
+        }
+    </script>
+
+</body>
 </html>

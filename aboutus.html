@@ -2,30 +2,47 @@
     <head>
         <title>resturant</title>
         <style>
-            body{
-  margin: 5 px;
-  font-family: Arial;
-}
-.topnav {
-  overflow: hidden;
-  background-color: pink;
-}
+body {
+            margin: 5px;
+            font-family: Arial;
+            background-color: rgb(181, 173, 180);
+            color: white;
+        }
 
-.topnav a {
-  float: left;
-  color: black;
+        .topnav {
+            overflow: hidden;
+            background-color: pink;
+        }
+
+        .topnav a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .topnav a:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: green;
+            color: white;
+        }
+body{
+  background-color: rgb(181, 173, 180);
+}
+h1{
+  text-shadow: 2px 2px #ff0000;
+  color: azure;
   text-align: center;
-  padding: 14px 16px ;
-  text-decoration: none;
-  font-size: 15px;
+  size:10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
-.topnav a:hover{
-  background-color: blue;
-  color: white;
-}
-
-.topnav a.active {
-  background-color:green  ;
+h5{
   color: white;
 }
         </style>
@@ -40,5 +57,51 @@
 
 
   </div>
+  <h1>ABOUT US</h6>
+    <center>
+    <img  class="myslide" src="restyrant.jpg" height="300" width="500" alt="Cheeseburger">
+    <img  class="myslide" src="resturant2.jpg" height="300" width="500" alt="Cheeseburger" >
+    <img  class="myslide" src="resturant3.jpg" height="300" width="500" alt="Cheeseburger">
+    <img  class="myslide" src="resturant4.jpg" height="300" width="500" alt="Cheeseburger">
+    <img  class="myslide" src="resturant5.jpg" height="300" width="500" alt="Cheeseburger">
+    <h5>OUR BRANCHES</h5>
+    
+    <p>Welcome to our restaurant — where tradition meets taste, and every meal tells a story.</p>
+
+    <p>Established in <strong>1996</strong>, our journey began with a single humble branch in the heart of <strong>DHA, Lahore</strong>. Guided by the vision and passion of our founder, <strong>Mr. Umer</strong>, we set out with one simple goal: to serve exceptional food made with love, authenticity, and the finest ingredients.</p>
+
+    <h2>Our Founder – Mr. Umer</h2>
+    <p>Mr. Umer believed that great food brings people together. With a deep respect for traditional recipes and a passion for hospitality, he turned his dream into reality. His commitment to quality, consistency, and community quickly made our restaurant a beloved gathering place for families, friends, and food lovers across Lahore.</p>
+
+    <h2>Our Promise</h2>
+    <p>More than a 25 Years later, we remain true to our roots. Our chefs continue to use time-honored methods, while adding just the right touch of modern creativity. Whether you’re here for a quick bite or a full dining experience, you’ll always be served with warmth, care, and a dedication to excellence.</p>
+
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Over 25 Years of Culinary Heritage</li>
+      <li>Fresh, Handpicked Ingredients</li>
+      <li>Authentic Recipes Passed Through Generations</li>
+      <li>A Welcoming Atmosphere That Feels Like Home</li>
+    </ul>
+
+    <div class="footer">
+      <p><strong>FLAVOR BISTRO</strong> &mdash; Serving Taste Since 1996</p>
+    </div>
+
+    </center>
+     <script>
+    let index = 0;
+    function carousel() {
+      let slides = document.getElementsByClassName("myslide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      index++;
+      if (index > slides.length) { index = 1; }
+      slides[index - 1].style.display = "block";
+      setTimeout(carousel, 2000);
+    }
+    carousel();
+  </script>
  </body>
 </html>

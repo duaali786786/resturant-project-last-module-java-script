@@ -1,0 +1,105 @@
+
+<html>
+<head>
+  <title>Invoice</title>
+<style>
+ 
+  h1{
+  text-shadow: 2px 2px #ff0000;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  size:10px;
+  
+}
+  
+        body {
+            margin: 5px;
+          background-color: rgb(181, 173, 180);
+        }
+p{
+      text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: cursive;
+}
+h3{
+  color: white;
+  font-family: cursive;
+
+}
+    .total-box {
+      background-color: #e0e0e0;
+      padding: 15px;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 24px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    button {
+      display: block;
+      margin: 30px ;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #d78971;
+      color: white;
+      
+      border-radius: 5px;
+      
+    }
+    .invoice-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow:  2px rgba(0,0,0,0.1);
+    }
+    .style{
+      color: white;
+      font-family: cursive;
+    }
+</style>
+
+<body>
+  <center>
+<h1>THANK YOU FOR ORDERING</h1>
+<p style="color: white;">Dear Valued Customer,
+Thank you for choosing Flavor Bistro for your meal today!
+We truly appreciate your support and hope you enjoyed every bite.
+
+Your satisfaction means the world to us. If you loved your experience, we’d be thrilled if you shared it with others or left us a review.
+
+We look forward to serving you again soon!
+Bon appétit! 😊
+
+- Team Flavor Bistro</p>
+      <div class="invoice-container" id="feedbackBox">
+  <h5>SUBMIT YOUR VALUABLE FEEDBACK</h5>
+  <input type="text">
+  <button onclick="submitFeedback()">Submit</button>
+</div>
+
+<div id="thankYouMessage" style="display: none;">
+  <h3>Thank You!</h2>
+  <p class="style">We appreciate your feedback.</p>
+</div>
+
+<h3>YOUR ORDER IS RECORDED</h3>
+
+    
+    </div>
+    <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+  </div>
+</center>
+<script>
+  function submitFeedback() {
+    
+    document.getElementById('feedbackBox').style.display = 'none';
+
+  
+    document.getElementById('thankYouMessage').style.display = 'block';
+  }
+</script>
+</body>
+</html>

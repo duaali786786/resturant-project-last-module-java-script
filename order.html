@@ -1,0 +1,95 @@
+
+
+<html>
+<head>
+  <title>Order Now - Gourmet Bites</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: rgb(181, 173, 180);
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .food-options label {
+      display: block;
+      margin: 5px 0;
+      font-weight: normal;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 25px;
+      padding: 12px;
+      background-color: #b22222;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      
+     
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Order Now</h1>
+
+   
+    <form>
+      <label>Address</label>
+      <input type="text" name="address" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label>Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label>Your Name</label>
+      <input type="text" name="name" required>
+
+      <label>Payment Method</label>
+      <div class="food-options">
+        <label><input type="radio" name="payment" value="Cash on Delivery"> Cash on Delivery</label>
+        <label><input type="radio" name="payment" value="Credit/Debit Card"> Credit/Debit Card</label>
+        <label><input type="radio" name="payment" value="JazzCash / Easypaisa"> JazzCash / Easypaisa-(at 92-493-5679392)</label>
+      </div>
+
+      <button type="submit" class="submit-btn">ORDER</button>
+    </form>
+
+    <button class="next-btn" onclick="window.location.href='invoice.html'">NEXT</button>
+  </div>
+</body>
+</html>
